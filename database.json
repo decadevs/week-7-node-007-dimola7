@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "shape": "triangle",
+    "dimension": {
+      "a": 3,
+      "b": 6,
+      "c": 8
+    },
+    "area": 7.644442425710328,
+    "createdAt": "2021-05-08T21:41:14.302Z"
+  },
+  {
+    "id": 2,
+    "shape": "rectangle",
+    "dimension": {
+      "a": 3,
+      "b": 6
+    },
+    "area": 18,
+    "createdAt": "2021-05-08T21:41:29.937Z"
+  },
+  {
+    "id": 3,
+    "shape": "circle",
+    "dimension": 9,
+    "area": 254.46900494077323,
+    "createdAt": "2021-05-08T21:41:50.928Z"
+  },
+  {
+    "id": 4,
+    "shape": "square",
+    "dimension": 9,
+    "area": 81,
+    "createdAt": "2021-05-08T21:42:07.700Z"
+  },
+  {
+    "id": 5,
+    "shape": "square",
+    "dimension": 9,
+    "area": 81,
+    "createdAt": "2021-05-08T21:46:37.056Z"
+  },
+  {
+    "id": 6,
+    "shape": "circle",
+    "dimension": 9,
+    "area": 254.46900494077323,
+    "createdAt": "2021-05-08T21:46:49.732Z"
+  },
+  {
+    "id": 7,
+    "shape": "rectangle",
+    "dimension": {
+      "a": 2,
+      "b": 3
+    },
+    "area": 6,
+    "createdAt": "2021-05-08T21:47:22.331Z"
+  },
+  {
+    "id": 8,
+    "shape": "triangle",
+    "dimension": {
+      "a": 2,
+      "b": 3,
+      "c": 4
+    },
+    "area": 2.9047375096555625,
+    "createdAt": "2021-05-08T21:47:42.985Z"
+  }
+]
