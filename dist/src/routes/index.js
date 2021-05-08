@@ -7,13 +7,12 @@ const express_1 = __importDefault(require("express"));
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
 const router = express_1.default.Router();
-let filePath = path_1.default.join(__dirname, '../../../database.json');
+let filePath = path_1.default.join(__dirname, "../../../database.json");
 // post request
 router.post("/calculate", (req, res) => {
     if (!req.body.shape || !req.body.dimension) {
         return res.status(400).send("Please fill in all required fields");
     }
-    ;
     if (req.body.shape === "square" || req.body.shape === "Square") {
         const database = readData();
         const num = req.body.dimension;
@@ -23,13 +22,13 @@ router.post("/calculate", (req, res) => {
             shape: req.body.shape,
             dimension: num,
             area: areaOfSq,
-            createdAt: new Date()
+            createdAt: new Date(),
         };
         database.data.push(sqObj);
         fs_1.default.writeFileSync(filePath, JSON.stringify(database.data, null, 2));
         res.status(201).json({
             status: "success",
-            data: sqObj
+            data: sqObj,
         });
     }
     else if (req.body.shape === "rectangle" || req.body.shape === "Rectangle") {
@@ -44,20 +43,22 @@ router.post("/calculate", (req, res) => {
             shape: req.body.shape,
             dimension: {
                 a,
-                b
+                b,
             },
             area: areaOfRec,
-            createdAt: new Date()
+            createdAt: new Date(),
         };
         database.data.push(recObj);
         fs_1.default.writeFileSync(filePath, JSON.stringify(database.data, null, 2));
         res.status(201).json({
             status: "success",
-            data: recObj
+            data: recObj,
         });
     }
     else if (req.body.shape === "triangle" || req.body.shape === "Triangle") {
-        if (!req.body.dimension.a || !req.body.dimension.b || !req.body.dimension.c) {
+        if (!req.body.dimension.a ||
+            !req.body.dimension.b ||
+            !req.body.dimension.c) {
             return res.json("three parameters are required");
         }
         const database = readData();
@@ -70,16 +71,16 @@ router.post("/calculate", (req, res) => {
             dimension: {
                 a,
                 b,
-                c
+                c,
             },
             area: areaOfTri,
-            createdAt: new Date()
+            createdAt: new Date(),
         };
         database.data.push(triObj);
         fs_1.default.writeFileSync(filePath, JSON.stringify(database.data, null, 2));
         res.status(201).json({
             status: "success",
-            data: triObj
+            data: triObj,
         });
     }
     else if (req.body.shape === "circle" || req.body.shape === "Circle") {
@@ -91,13 +92,13 @@ router.post("/calculate", (req, res) => {
             shape: req.body.shape,
             dimension: num,
             area: areaOfCirc,
-            createdAt: new Date()
+            createdAt: new Date(),
         };
         database.data.push(circObj);
         fs_1.default.writeFileSync(filePath, JSON.stringify(database.data, null, 2));
         res.status(201).json({
             status: "success",
-            data: circObj
+            data: circObj,
         });
     }
     else {
@@ -109,7 +110,7 @@ router.get("/fetchRecords", (req, res) => {
     const database = JSON.parse(fs_1.default.readFileSync(filePath, "utf-8"));
     res.status(200).json({
         status: "success",
-        data: database
+        data: database,
     });
 });
 const readData = () => {
@@ -118,14 +119,14 @@ const readData = () => {
         const newId = database[database.length - 1].id + 1;
         return {
             id: newId,
-            data: database
+            data: database,
         };
     }
     catch (err) {
         console.log(err);
         return {
             id: 1,
-            data: []
+            data: [],
         };
     }
 };
