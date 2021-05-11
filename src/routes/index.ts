@@ -20,7 +20,7 @@ interface data {
 
 let filePath = path.join(__dirname, "../../../database.json");
 
-// post request
+// post requests
 router.post("/calculate", (req, res) => {
   if (!req.body.shape || !req.body.dimension) {
     return res.status(400).send("Please fill in all required fields");
